@@ -1,0 +1,28 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
+
+namespace EmployeeManagement.ViewModels
+{
+    public class RegisterViewModel
+    {
+        [Required]
+        [EmailAddress]
+        [Remote(controller:"account" , action: "IsEmailInUse")]
+        public string Email { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
+
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm Password")]
+        [Compare("Password", ErrorMessage ="Password Does not match !")]
+        public string ConfirmPassword { get; set; }
+
+        [Required]
+        public string City { get; set; }
+        [Required]
+        public string Gender { get; set; }
+    }
+}

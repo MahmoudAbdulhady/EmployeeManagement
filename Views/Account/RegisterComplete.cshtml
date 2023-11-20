@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Registration Complete";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h3>@ViewBag.ErrorTitle</h3>
+                </div>
+                <div class="card-body">
+                    <p>@ViewBag.ErrorMessage</p>
+                    <a asp-controller="home" asp-action="index" class="btn btn-primary">Return to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
